@@ -1,0 +1,11 @@
+development 200 pool 200 rows 41423 elapsed 6.4
+development 210 pool 210 rows 41772 elapsed 58.1
+development 220 pool 220 rows 41970 elapsed 111.5
+development 230 pool 230 rows 41488 elapsed 168.6
+development 240 pool 240 rows 41655 elapsed 238.8
+development 250 pool 250 rows 42204 elapsed 316.2
+development 260 pool 260 rows 41997 elapsed 385.9
+development 270 pool 270 rows 42294 elapsed 453.0
+development 280 pool 280 rows 41617 elapsed 516.2
+development 290 pool 290 rows 41989 elapsed 592.3
+DONE development 644.4

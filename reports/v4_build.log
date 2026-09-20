@@ -1,0 +1,9 @@
+evidence pool 0
+evidence pool 50
+evidence pool 100
+evidence pool 150
+evidence pool 200
+evidence pool 250
+evidence pool 300
+evidence pool 350
+{"baseline_sha256": "a1ba20e2ed0cec5eb582868e15c5778eea5b76a544bb4e90cef6c38f4fe2fb22", "sha256": "1fe9ae687f1d90252b0324279dc6d15bee9b10c294193b46d508a3f0a0855d94", "rows": 112540, "changed_evidence_rows": 88681, "risk_and_behavior_exactly_preserved": true, "soft_play_rows_exactly_preserved": true, "context_weights": [0.5, 0, 0.5]}

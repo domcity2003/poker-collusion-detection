@@ -1,0 +1,11 @@
+evaluation 300 pool 300 rows 23771 elapsed 3.1
+evaluation 310 pool 310 rows 22445 elapsed 27.9
+evaluation 320 pool 320 rows 18048 elapsed 52.5
+evaluation 330 pool 330 rows 22883 elapsed 74.9
+evaluation 340 pool 340 rows 27352 elapsed 102.2
+evaluation 350 pool 350 rows 27326 elapsed 128.8
+evaluation 360 pool 360 rows 26567 elapsed 155.3
+evaluation 370 pool 370 rows 23161 elapsed 180.8
+evaluation 380 pool 380 rows 24725 elapsed 206.8
+evaluation 390 pool 390 rows 23310 elapsed 234.3
+DONE evaluation 258.2

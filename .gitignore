@@ -1,0 +1,15 @@
+# Never commit competition data or derived caches.
+data/
+artifacts/
+reference/public_*/
+.venv/
+.firecrawl/
+__pycache__/
+*.pyc
+*.cbm
+*.npy
+
+# Derived competition data: these contain hand ids, player ids, hole cards and
+# table ids from the competition dataset. Redistribution is not permitted.
+reports/discovery_cases.csv
+reports/discovery_replays.txt

@@ -1,0 +1,11 @@
+development 300 pool 300 rows 41478 elapsed 6.4
+development 310 pool 310 rows 41555 elapsed 58.8
+development 320 pool 320 rows 41509 elapsed 113.6
+development 330 pool 330 rows 41662 elapsed 174.9
+development 340 pool 340 rows 41592 elapsed 241.6
+development 350 pool 350 rows 41233 elapsed 321.0
+development 360 pool 360 rows 41499 elapsed 393.4
+development 370 pool 370 rows 41899 elapsed 464.9
+development 380 pool 380 rows 41029 elapsed 533.6
+development 390 pool 390 rows 41629 elapsed 608.0
+DONE development 652.6

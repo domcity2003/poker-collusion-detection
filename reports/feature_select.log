@@ -1,0 +1,17 @@
+importance subsample (41520, 939) positives 304
+saved selection in 10 s. Top 15:
+    12.12  contrast_loose_max
+    10.22  pop_joint_resid__mean
+     6.67  contrast_loose_min
+     3.68  contrast_resid_max
+     3.17  weak_aggression_max__top5
+     2.92  contrast_calls_max
+     2.59  fold_better_sum__top5
+     1.96  fold_better_max__top5
+     1.68  strong_passive_sum__top5
+     1.68  pop_follower_junk__max
+     1.63  pop_tight_min__top5
+     1.61  pop_follower_junk__top5
+     1.41  pop_loose_max__top5
+     1.38  base_enter_sum
+     1.37  pop_follower_junk__mean

@@ -1,0 +1,42 @@
+{
+  "base": {
+    "map5": 0.45324744152046786,
+    "pairs": 304,
+    "per_family": {
+      "directed_transfer": 0.4930155367231639,
+      "soft_play": 0.5892341640706126,
+      "coordinated_isolation": 0.209662447257384
+    },
+    "seconds": 26
+  },
+  "rank": {
+    "map5": 0.4755866228070175,
+    "pairs": 304,
+    "per_family": {
+      "directed_transfer": 0.5185428436911488,
+      "soft_play": 0.6146131879543094,
+      "coordinated_isolation": 0.2231223628691983
+    },
+    "seconds": 101
+  },
+  "norm": {
+    "map5": 0.46431103801169593,
+    "pairs": 304,
+    "per_family": {
+      "directed_transfer": 0.5110616760828625,
+      "soft_play": 0.613507268951194,
+      "coordinated_isolation": 0.19240506329113927
+    },
+    "seconds": 58
+  },
+  "family": {
+    "map5": 0.494359466374269,
+    "pairs": 304,
+    "per_family": {
+      "directed_transfer": 0.5453507532956684,
+      "soft_play": 0.6086033229491173,
+      "coordinated_isolation": 0.2634599156118143
+    },
+    "seconds": 149
+  }
+}

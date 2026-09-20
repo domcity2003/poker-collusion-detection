@@ -1,0 +1,38 @@
+[
+  {
+    "variant": "base",
+    "broad_ap": 0.6768654245712465,
+    "broad_ap_blend": 0.7120815930385094,
+    "labeled_ap_blend": 0.9964747695805719,
+    "median_positive_rank": 204.5,
+    "p90_positive_rank": 423.39999999999986,
+    "seconds": 70
+  },
+  {
+    "variant": "spy",
+    "broad_ap": 0.6689213604661699,
+    "broad_ap_blend": 0.6923978520759921,
+    "labeled_ap_blend": 0.9973430286014859,
+    "median_positive_rank": 213.5,
+    "p90_positive_rank": 450.49999999999994,
+    "seconds": 145
+  },
+  {
+    "variant": "seeds",
+    "broad_ap": 0.6816940670829532,
+    "broad_ap_blend": 0.7103242509342003,
+    "labeled_ap_blend": 0.9970182627178976,
+    "median_positive_rank": 208.5,
+    "p90_positive_rank": 431.19999999999993,
+    "seconds": 264
+  },
+  {
+    "variant": "tuned",
+    "broad_ap": 0.6874966188259386,
+    "broad_ap_blend": 0.7104674037783246,
+    "labeled_ap_blend": 0.9967989723724608,
+    "median_positive_rank": 210.5,
+    "p90_positive_rank": 462.4,
+    "seconds": 292
+  }
+]

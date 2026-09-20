@@ -1,0 +1,9 @@
+{
+  "mean_delta": 0.01325749269005848,
+  "pool_bootstrap_95": [
+    0.003596159978316676,
+    0.02287701676065163
+  ],
+  "resamples_above_zero": 0.9964,
+  "caveat": "Family blend chosen on these folds; interval does not correct model-selection optimism."
+}

@@ -1,0 +1,33 @@
+{"variant": "binary", "map5": 0.5002640716374269, "per_family": {"directed_transfer": 0.5358615819209039, "soft_play": 0.6308904465212873, "coordinated_isolation": 0.27016877637130804}}
+{"variant": "graded", "map5": 0.4768265716374269, "per_family": {"directed_transfer": 0.5284180790960451, "soft_play": 0.5869652128764278, "coordinated_isolation": 0.2505907172995781}}
+Traceback (most recent call last):
+  File "/Users/dombavuso/kaggle/poker-collusion/src/evidence_exp4.py", line 54, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/dombavuso/kaggle/poker-collusion/src/evidence_exp4.py", line 52, in main
+    run(h,fc,True,'graded+ndcg',probs,'NDCG')]
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dombavuso/kaggle/poker-collusion/src/evidence_exp4.py", line 34, in run
+    m.fit(Pool(XX[i],rel[i],group_id=gid[i]));spec.append(m.predict(XX[te]))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dombavuso/kaggle/poker-collusion/.venv/lib/python3.14/site-packages/catboost/core.py", line 6586, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, pairs, graph,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              sample_weight, group_id, group_weight, subgroup_id, pairs_weight, baseline, use_best_model,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              eval_set, verbose, logging_level, plot, plot_file, column_description, verbose_eval, metric_period,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              silent, early_stopping_rounds, save_snapshot, snapshot_file, snapshot_interval, init_model, callbacks, log_cout, log_cerr)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dombavuso/kaggle/poker-collusion/.venv/lib/python3.14/site-packages/catboost/core.py", line 2701, in _fit
+    train_params = self._prepare_train_params(
+        X=X, y=y, cat_features=cat_features, text_features=text_features, embedding_features=embedding_features,
+    ...<6 lines>...
+        callbacks=callbacks
+    )
+  File "/Users/dombavuso/kaggle/poker-collusion/.venv/lib/python3.14/site-packages/catboost/core.py", line 2627, in _prepare_train_params
+    _check_train_params(params)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "_catboost.pyx", line 7029, in _catboost._check_train_params
+  File "_catboost.pyx", line 7051, in _catboost._check_train_params
+_catboost.CatBoostError: catboost/private/libs/options/catboost_options.cpp:267: Unknown loss function NDCG

@@ -1,0 +1,76 @@
+{
+  "rows": {
+    "hands": 2000000,
+    "seats": 12000000,
+    "actions": 18609028
+  },
+  "pools": 400,
+  "players": 12000,
+  "seat_duplicate_keys": 0,
+  "hand_duplicate_ids": 0,
+  "phase": [
+    {
+      "phase": "development",
+      "len": 1200000
+    },
+    {
+      "phase": "evaluation",
+      "len": 800000
+    }
+  ],
+  "card_nulls": [
+    {
+      "hole_card_1": 0,
+      "hole_card_2": 0
+    }
+  ],
+  "chip_balance": [
+    {
+      "balance": 0
+    }
+  ],
+  "actions": [
+    {
+      "action": "call",
+      "len": 2970783
+    },
+    {
+      "action": "bet",
+      "len": 1504771
+    },
+    {
+      "action": "raise",
+      "len": 2468102
+    },
+    {
+      "action": "fold",
+      "len": 9652383
+    },
+    {
+      "action": "check",
+      "len": 1837361
+    },
+    {
+      "action": "all_in",
+      "len": 175628
+    }
+  ],
+  "streets": [
+    {
+      "street": "river",
+      "len": 914172
+    },
+    {
+      "street": "preflop",
+      "len": 13228162
+    },
+    {
+      "street": "flop",
+      "len": 2852419
+    },
+    {
+      "street": "turn",
+      "len": 1614275
+    }
+  ]
+}

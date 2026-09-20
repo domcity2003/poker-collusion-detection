@@ -1,0 +1,89 @@
+{
+  "directed_transfer": {
+    "hidden": "directed_transfer",
+    "n_hidden": 118,
+    "n_seen": 186,
+    "novelty_ap": 0.9445541641884025,
+    "base_rate": 0.3881578947368421,
+    "median_conf_hidden": 0.953390886182478,
+    "median_conf_seen": 0.999444031590289,
+    "thr_0.5": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.0
+    },
+    "thr_0.6": {
+      "caught_hidden": 0.05084745762711865,
+      "wrongly_flagged_seen": 0.0
+    },
+    "thr_0.7": {
+      "caught_hidden": 0.11016949152542373,
+      "wrongly_flagged_seen": 0.0
+    },
+    "thr_0.8": {
+      "caught_hidden": 0.2542372881355932,
+      "wrongly_flagged_seen": 0.010752688172043012
+    },
+    "thr_0.9": {
+      "caught_hidden": 0.3474576271186441,
+      "wrongly_flagged_seen": 0.010752688172043012
+    }
+  },
+  "soft_play": {
+    "hidden": "soft_play",
+    "n_hidden": 107,
+    "n_seen": 197,
+    "novelty_ap": 0.7963955710597262,
+    "base_rate": 0.3519736842105263,
+    "median_conf_hidden": 0.9683977240883799,
+    "median_conf_seen": 0.9992907255794593,
+    "thr_0.5": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.0
+    },
+    "thr_0.6": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.01015228426395939
+    },
+    "thr_0.7": {
+      "caught_hidden": 0.028037383177570093,
+      "wrongly_flagged_seen": 0.01015228426395939
+    },
+    "thr_0.8": {
+      "caught_hidden": 0.11214953271028037,
+      "wrongly_flagged_seen": 0.015228426395939087
+    },
+    "thr_0.9": {
+      "caught_hidden": 0.17757009345794392,
+      "wrongly_flagged_seen": 0.025380710659898477
+    }
+  },
+  "coordinated_isolation": {
+    "hidden": "coordinated_isolation",
+    "n_hidden": 79,
+    "n_seen": 225,
+    "novelty_ap": 0.6011763090026877,
+    "base_rate": 0.2598684210526316,
+    "median_conf_hidden": 0.9888287253001601,
+    "median_conf_seen": 0.9994668310024201,
+    "thr_0.5": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.0
+    },
+    "thr_0.6": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.0044444444444444444
+    },
+    "thr_0.7": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.0044444444444444444
+    },
+    "thr_0.8": {
+      "caught_hidden": 0.0,
+      "wrongly_flagged_seen": 0.013333333333333334
+    },
+    "thr_0.9": {
+      "caught_hidden": 0.05063291139240506,
+      "wrongly_flagged_seen": 0.022222222222222223
+    }
+  }
+}

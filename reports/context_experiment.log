@@ -1,0 +1,11 @@
+baseline fold 1 22
+baseline fold 2 43
+baseline fold 3 64
+baseline fold 4 84
+context fold 1 25
+context fold 2 51
+context fold 3 76
+context fold 4 101
+baseline {"map5": 0.5002640716374269, "folds": [{"fold": 1, "ap": 0.486165008291874}, {"fold": 2, "ap": 0.48834401709401715}, {"fold": 3, "ap": 0.5534872372372373}, {"fold": 4, "ap": 0.4759803921568628}], "family": [{"family": "directed_transfer", "ap": 0.5358615819209039}, {"family": "soft_play", "ap": 0.6308904465212877}, {"family": "coordinated_isolation", "ap": 0.27016877637130804}]}
+context {"map5": 0.4992068713450292, "folds": [{"fold": 1, "ap": 0.4740049751243781}, {"fold": 2, "ap": 0.4842735042735043}, {"fold": 3, "ap": 0.5664039039039039}, {"fold": 4, "ap": 0.47427450980392155}], "family": [{"family": "soft_play", "ap": 0.6020301142263759}, {"family": "directed_transfer", "ap": 0.5607203389830508}, {"family": "coordinated_isolation", "ap": 0.2680590717299578}]}
+blend50 {"map5": 0.5074798976608187, "folds": [{"fold": 1, "ap": 0.48662935323383083}, {"fold": 2, "ap": 0.49028846153846156}, {"fold": 3, "ap": 0.5643543543543543}, {"fold": 4, "ap": 0.49017647058823527}], "family": [{"family": "soft_play", "ap": 0.6156438213914849}, {"family": "coordinated_isolation", "ap": 0.2789451476793249}, {"family": "directed_transfer", "ap": 0.5624011299435028}]}

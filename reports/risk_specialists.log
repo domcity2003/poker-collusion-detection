@@ -1,0 +1,10 @@
+fitted 281 s
+generic {"raw": 0.6872, "blend": 0.7208, "directed_transfer": 0.5078, "soft_play": 0.5232, "coordinated_isolation": 0.4279}
+spec_max {"raw": 0.7103, "blend": 0.7239, "directed_transfer": 0.5185, "soft_play": 0.5152, "coordinated_isolation": 0.4453}
+spec_mean {"raw": 0.7057, "blend": 0.7124, "directed_transfer": 0.5089, "soft_play": 0.4292, "coordinated_isolation": 0.5199}
+blend_0.2 {"raw": 0.6926, "blend": 0.729, "directed_transfer": 0.5226, "soft_play": 0.5352, "coordinated_isolation": 0.4326}
+blend_0.35 {"raw": 0.6967, "blend": 0.7323, "directed_transfer": 0.5261, "soft_play": 0.5399, "coordinated_isolation": 0.4378}
+blend_0.5 {"raw": 0.7011, "blend": 0.7311, "directed_transfer": 0.5284, "soft_play": 0.5237, "coordinated_isolation": 0.4406}
+blend_0.65 {"raw": 0.7017, "blend": 0.7266, "directed_transfer": 0.5189, "soft_play": 0.5188, "coordinated_isolation": 0.435}
+rankblend_0.3 {"raw": 0.696, "blend": 0.7115, "directed_transfer": 0.5197, "soft_play": 0.4956, "coordinated_isolation": 0.3888}
+rankblend_0.5 {"raw": 0.7021, "blend": 0.7207, "directed_transfer": 0.5275, "soft_play": 0.5079, "coordinated_isolation": 0.4067}

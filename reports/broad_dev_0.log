@@ -1,0 +1,10 @@
+development 10 pool 10 rows 41452 elapsed 42.9
+development 20 pool 20 rows 41728 elapsed 97.1
+development 30 pool 30 rows 40997 elapsed 154.8
+development 40 pool 40 rows 41119 elapsed 225.3
+development 50 pool 50 rows 41466 elapsed 305.5
+development 60 pool 60 rows 42416 elapsed 373.9
+development 70 pool 70 rows 42374 elapsed 444.0
+development 80 pool 80 rows 41082 elapsed 509.3
+development 90 pool 90 rows 42151 elapsed 588.1
+DONE development 641.9

@@ -1,0 +1,17 @@
+evidence pool 0
+evidence pool 100
+evidence pool 200
+evidence pool 300
+{
+  "baseline": "artifacts/v5/submission_v5.csv",
+  "baseline_sha256": "e721f61a2ec5f6b7ce258b1c9ae67d17e95e12ece91eafe9b65e0431daa6f3a4",
+  "sha256": "6fa57cf41e35888ccbe7a0f5239f273a34581f665987962149fbe7917e33e3e5",
+  "weights": {
+    "0": 0.7,
+    "1": 0.0,
+    "2": 0.5
+  },
+  "only_evidence_changed": true,
+  "changed_evidence_rows": 64695,
+  "rows": 112540
+}

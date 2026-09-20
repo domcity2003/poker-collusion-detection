@@ -1,0 +1,26 @@
+{
+  "v4 weights, 1 seed": {
+    "overall": 0.5170650584795322,
+    "directed_transfer": 0.5696727871939737,
+    "soft_play": 0.6315861889927309,
+    "coordinated_isolation": 0.2833755274261604
+  },
+  "v4 weights, 3 seeds": {
+    "overall": 0.5112125365497076,
+    "directed_transfer": 0.57179143126177,
+    "soft_play": 0.616921079958463,
+    "coordinated_isolation": 0.27755274261603374
+  },
+  "tuned weights, 1 seed": {
+    "overall": 0.5199387792397661,
+    "directed_transfer": 0.5770762711864407,
+    "soft_play": 0.6315861889927309,
+    "coordinated_isolation": 0.2833755274261604
+  },
+  "tuned weights, 3 seeds": {
+    "overall": 0.510766630116959,
+    "directed_transfer": 0.5706426553672315,
+    "soft_play": 0.616921079958463,
+    "coordinated_isolation": 0.27755274261603374
+  }
+}

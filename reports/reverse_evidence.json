@@ -1,0 +1,548 @@
+{
+  "directed_transfer": [
+    {
+      "feature": "fold_better_sum",
+      "threshold": 0.021666666492819786,
+      "jaccard": 0.38360636433658746,
+      "recall": 0.61,
+      "exact_sets": 1,
+      "n_pairs": 145,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_better_max",
+      "threshold": 0.021666666492819786,
+      "jaccard": 0.38360636433658746,
+      "recall": 0.61,
+      "exact_sets": 1,
+      "n_pairs": 145,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_with_best",
+      "threshold": 0.0,
+      "jaccard": 0.36471042041280627,
+      "recall": 0.5383449883449883,
+      "exact_sets": 0,
+      "n_pairs": 143,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_with_best_pot_bb",
+      "threshold": 0.0,
+      "jaccard": 0.36471042041280627,
+      "recall": 0.5383449883449883,
+      "exact_sets": 0,
+      "n_pairs": 143,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_with_best_cheap",
+      "threshold": 0.0,
+      "jaccard": 0.36471042041280627,
+      "recall": 0.5383449883449883,
+      "exact_sets": 0,
+      "n_pairs": 143,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_with_best_any",
+      "threshold": 0.0,
+      "jaccard": 0.36471042041280627,
+      "recall": 0.5383449883449883,
+      "exact_sets": 0,
+      "n_pairs": 143,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "partner_fold_made_sum",
+      "threshold": 1.0,
+      "jaccard": 0.3493323455302984,
+      "recall": 0.545124716553288,
+      "exact_sets": 0,
+      "n_pairs": 147,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "partner_fold_made_max",
+      "threshold": 1.0,
+      "jaccard": 0.3493323455302984,
+      "recall": 0.545124716553288,
+      "exact_sets": 0,
+      "n_pairs": 147,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_better_sum",
+      "threshold": 0.0,
+      "jaccard": 0.34558578325558803,
+      "recall": 0.6189342403628117,
+      "exact_sets": 0,
+      "n_pairs": 147,
+      "median_qualifying": 6.0
+    },
+    {
+      "feature": "fold_better_max",
+      "threshold": 0.0,
+      "jaccard": 0.34558578325558803,
+      "recall": 0.6189342403628117,
+      "exact_sets": 0,
+      "n_pairs": 147,
+      "median_qualifying": 6.0
+    },
+    {
+      "feature": "acts_with_best",
+      "threshold": 0.0,
+      "jaccard": 0.32423673793599406,
+      "recall": 0.8506756756756755,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 13.0
+    },
+    {
+      "feature": "acts_with_best_any",
+      "threshold": 0.0,
+      "jaccard": 0.32423673793599406,
+      "recall": 0.8506756756756755,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 13.0
+    },
+    {
+      "feature": "aggressive_behind_partner",
+      "threshold": 0.0,
+      "jaccard": 0.32360757498133463,
+      "recall": 0.7306306306306307,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 10.0
+    },
+    {
+      "feature": "fold_better_sum",
+      "threshold": 0.16500000655651093,
+      "jaccard": 0.3235744851553675,
+      "recall": 0.3987745098039216,
+      "exact_sets": 1,
+      "n_pairs": 136,
+      "median_qualifying": 3.0
+    },
+    {
+      "feature": "fold_better_max",
+      "threshold": 0.16500000655651093,
+      "jaccard": 0.3235744851553675,
+      "recall": 0.3987745098039216,
+      "exact_sets": 1,
+      "n_pairs": 136,
+      "median_qualifying": 3.0
+    },
+    {
+      "feature": "fold_beating_partner_pot_bb",
+      "threshold": 3.774999999999636,
+      "jaccard": 0.3208695815313462,
+      "recall": 0.5315315315315315,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_beating_partner",
+      "threshold": 0.0,
+      "jaccard": 0.32023350589527055,
+      "recall": 0.5315315315315315,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_beating_partner_pot_bb",
+      "threshold": 0.0,
+      "jaccard": 0.32023350589527055,
+      "recall": 0.5315315315315315,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "fold_beating_partner_any",
+      "threshold": 0.0,
+      "jaccard": 0.32023350589527055,
+      "recall": 0.5315315315315315,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "partner_fold_made_sum",
+      "threshold": 0.0,
+      "jaccard": 0.3163055051127459,
+      "recall": 0.64009009009009,
+      "exact_sets": 0,
+      "n_pairs": 148,
+      "median_qualifying": 8.0
+    }
+  ],
+  "soft_play": [
+    {
+      "feature": "partner_call_sum",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_max",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_strength_sum",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_strength_max",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_price_sum",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_price_max",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_bb_sum",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_bb_max",
+      "threshold": 0.0,
+      "jaccard": 0.42300454579310864,
+      "recall": 0.7226010101010101,
+      "exact_sets": 5,
+      "n_pairs": 132,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "partner_call_strength_sum",
+      "threshold": 0.3484638124704342,
+      "jaccard": 0.360360331936266,
+      "recall": 0.5174300254452926,
+      "exact_sets": 4,
+      "n_pairs": 131,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "partner_call_strength_max",
+      "threshold": 0.34833332896232605,
+      "jaccard": 0.35913383578610575,
+      "recall": 0.5143765903307888,
+      "exact_sets": 4,
+      "n_pairs": 131,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "aggressive_behind_partner",
+      "threshold": 0.0,
+      "jaccard": 0.3442167529953789,
+      "recall": 0.5750636132315522,
+      "exact_sets": 0,
+      "n_pairs": 131,
+      "median_qualifying": 6.0
+    },
+    {
+      "feature": "fold_better_sum",
+      "threshold": 0.018333332613110542,
+      "jaccard": 0.32688088785649766,
+      "recall": 0.40325203252032527,
+      "exact_sets": 2,
+      "n_pairs": 123,
+      "median_qualifying": 3.0
+    },
+    {
+      "feature": "fold_better_max",
+      "threshold": 0.018333332613110542,
+      "jaccard": 0.32688088785649766,
+      "recall": 0.40325203252032527,
+      "exact_sets": 2,
+      "n_pairs": 123,
+      "median_qualifying": 3.0
+    },
+    {
+      "feature": "partner_call_price_sum",
+      "threshold": 0.3636363744735718,
+      "jaccard": 0.3193581330927679,
+      "recall": 0.4714646464646465,
+      "exact_sets": 3,
+      "n_pairs": 132,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "partner_call_price_max",
+      "threshold": 0.3601702243089651,
+      "jaccard": 0.3187180897786372,
+      "recall": 0.46994949494949495,
+      "exact_sets": 3,
+      "n_pairs": 132,
+      "median_qualifying": 4.5
+    },
+    {
+      "feature": "fold_better_sum",
+      "threshold": 0.20169390827417433,
+      "jaccard": 0.3111015490533563,
+      "recall": 0.32831325301204817,
+      "exact_sets": 0,
+      "n_pairs": 83,
+      "median_qualifying": 1.0
+    },
+    {
+      "feature": "fold_better_max",
+      "threshold": 0.20169390827417433,
+      "jaccard": 0.3111015490533563,
+      "recall": 0.32831325301204817,
+      "exact_sets": 0,
+      "n_pairs": 83,
+      "median_qualifying": 1.0
+    },
+    {
+      "feature": "aggressive_without_best",
+      "threshold": 0.0,
+      "jaccard": 0.30873041432608384,
+      "recall": 0.5903307888040712,
+      "exact_sets": 0,
+      "n_pairs": 131,
+      "median_qualifying": 8.0
+    },
+    {
+      "feature": "together_aggression_sum",
+      "threshold": 1.0,
+      "jaccard": 0.3080218342711548,
+      "recall": 0.4723918575063613,
+      "exact_sets": 0,
+      "n_pairs": 131,
+      "median_qualifying": 5.0
+    },
+    {
+      "feature": "facing_partner_sum",
+      "threshold": 1.0,
+      "jaccard": 0.3052099919073426,
+      "recall": 0.44758269720101773,
+      "exact_sets": 0,
+      "n_pairs": 131,
+      "median_qualifying": 4.0
+    }
+  ],
+  "coordinated_isolation": [
+    {
+      "feature": "policy_loose_max",
+      "threshold": 2.20303770918089,
+      "jaccard": 0.18450998864024784,
+      "recall": 0.4978260869565217,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 11.0
+    },
+    {
+      "feature": "policy_resid_max",
+      "threshold": 0.8895329076074169,
+      "jaccard": 0.18450998864024784,
+      "recall": 0.4978260869565217,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 11.0
+    },
+    {
+      "feature": "policy_loose_max",
+      "threshold": 2.9228647533449257,
+      "jaccard": 0.1615978191527642,
+      "recall": 0.2901098901098901,
+      "exact_sets": 0,
+      "n_pairs": 91,
+      "median_qualifying": 6.0
+    },
+    {
+      "feature": "policy_resid_max",
+      "threshold": 0.9462205983101165,
+      "jaccard": 0.1615978191527642,
+      "recall": 0.2901098901098901,
+      "exact_sets": 0,
+      "n_pairs": 91,
+      "median_qualifying": 6.0
+    },
+    {
+      "feature": "policy_junk_max",
+      "threshold": 0.3983333706855774,
+      "jaccard": 0.154003626330143,
+      "recall": 0.3847826086956522,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.0
+    },
+    {
+      "feature": "fold_better_sum",
+      "threshold": 0.0,
+      "jaccard": 0.1485940392316587,
+      "recall": 0.3434782608695652,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 9.0
+    },
+    {
+      "feature": "fold_better_max",
+      "threshold": 0.0,
+      "jaccard": 0.1485940392316587,
+      "recall": 0.3434782608695652,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 9.0
+    },
+    {
+      "feature": "both_pre_raise",
+      "threshold": 0.0,
+      "jaccard": 0.14169962550548765,
+      "recall": 0.3739130434782609,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.0
+    },
+    {
+      "feature": "policy_pfr_min",
+      "threshold": 0.0,
+      "jaccard": 0.14169962550548765,
+      "recall": 0.3739130434782609,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.0
+    },
+    {
+      "feature": "pair_both_agg_pre",
+      "threshold": 0.0,
+      "jaccard": 0.14169962550548765,
+      "recall": 0.3739130434782609,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.0
+    },
+    {
+      "feature": "isolation",
+      "threshold": 0.0,
+      "jaccard": 0.14097498782432824,
+      "recall": 0.37173913043478257,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.0
+    },
+    {
+      "feature": "partner_raise_sum",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_max",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_strength_sum",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_strength_max",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_price_sum",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_price_max",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_bb_sum",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "partner_raise_bb_max",
+      "threshold": 0.0,
+      "jaccard": 0.13517900711033484,
+      "recall": 0.3630434782608695,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.5
+    },
+    {
+      "feature": "squeeze_pre",
+      "threshold": 0.0,
+      "jaccard": 0.1345776557650632,
+      "recall": 0.3391304347826086,
+      "exact_sets": 0,
+      "n_pairs": 92,
+      "median_qualifying": 10.0
+    }
+  ]
+}

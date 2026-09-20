@@ -1,0 +1,11 @@
+evaluation 100 pool 100 rows 25374 elapsed 3.2
+evaluation 110 pool 110 rows 23525 elapsed 29.5
+evaluation 120 pool 120 rows 27148 elapsed 54.8
+evaluation 130 pool 130 rows 27381 elapsed 81.3
+evaluation 140 pool 140 rows 19530 elapsed 107.8
+evaluation 150 pool 150 rows 19417 elapsed 133.4
+evaluation 160 pool 160 rows 21523 elapsed 159.6
+evaluation 170 pool 170 rows 15368 elapsed 186.2
+evaluation 180 pool 180 rows 25373 elapsed 213.6
+evaluation 190 pool 190 rows 27106 elapsed 241.1
+DONE evaluation 262.3

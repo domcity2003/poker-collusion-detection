@@ -1,0 +1,11 @@
+{
+  "official_labeled_only": 0.9004835118362067,
+  "broad_ap": 0.6352473615174514,
+  "labeled_ap": 0.9993511175130815,
+  "evidence_map5": 0.5274632352941176,
+  "n_candidates": 28000,
+  "n_positives_broad": 68,
+  "n_labeled": 340,
+  "seconds": 55,
+  "estimated_eval_score": 0.6456108826392656
+}

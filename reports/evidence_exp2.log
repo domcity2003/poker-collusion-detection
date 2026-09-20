@@ -1,0 +1,2 @@
+family accuracy (cross-fitted): 0.9901
+{"variant": "family_blend_predicted", "map5": 0.4894316520467836, "pairs": 304, "per_family": {"directed_transfer": 0.5347104519774011, "soft_play": 0.6063992731048805, "coordinated_isolation": 0.2633755274261603}, "family_accuracy": 0.9901315789473685}

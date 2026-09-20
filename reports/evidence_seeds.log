@@ -1,0 +1,16 @@
+  base directed_transfer seed 2026 done 28s
+  base directed_transfer seed 7 done 56s
+  base directed_transfer seed 991 done 85s
+  base soft_play seed 2026 done 109s
+  base soft_play seed 7 done 135s
+  base soft_play seed 991 done 160s
+  base coordinated_isolation seed 2026 done 182s
+  base coordinated_isolation seed 7 done 204s
+  base coordinated_isolation seed 991 done 225s
+  ctx directed_transfer seed 2026 done 260s
+  ctx directed_transfer seed 7 done 295s
+  ctx directed_transfer seed 991 done 330s
+  ctx coordinated_isolation seed 2026 done 357s
+  ctx coordinated_isolation seed 7 done 385s
+  ctx coordinated_isolation seed 991 done 411s
+ALL FITTED 411

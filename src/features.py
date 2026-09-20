@@ -1,0 +1,161 @@
+"""Identity-free, symmetric pair/hand features from public poker records."""
+from pathlib import Path
+from collections import defaultdict,Counter
+from itertools import combinations
+from functools import lru_cache
+import argparse,time
+import numpy as np
+import polars as pl
+from treys import Card,Evaluator
+EV=Evaluator(); CARDS={r+s:Card.new(r+s) for r in '23456789TJQKA' for s in 'shdc'}
+R={r:i+2 for i,r in enumerate('23456789TJQKA')}
+ST={'preflop':0,'flop':1,'turn':2,'river':3}
+AGG={'raise','bet','all_in'}
+@lru_cache(4096)
+def pre(c1,c2):
+ a,b=sorted([R[c1[0]],R[c2[0]]],reverse=True)
+ return min(.99,(a+b-4)/30*.55+(a==b)*.35+(c1[1]==c2[1])*.07+(a-b<=2)*.04)
+def strength(cards,board):
+ if len(board)<3:return pre(*cards),0,0
+ rank=EV.evaluate([CARDS[c] for c in board],[CARDS[c] for c in cards])
+ cat=10-EV.get_rank_class(rank)
+ # categorical strength plus kicker; made pair and stronger stand out.
+ strength=(7463-rank)/7462
+ suits=Counter(c[1] for c in cards+board)
+ rr={R[c[0]] for c in cards+board}
+ if 14 in rr:rr.add(1)
+ draw=max(max(suits.values())==4, max(sum(x in rr for x in range(i,i+5)) for i in range(1,11))>=4)
+ return strength,cat,int(draw and len(board)<5)
+
+def pool_features(pool,pairs,hands):
+ """Each pair has a canonical player order; all output predictors are symmetric."""
+ ss=pl.read_parquet(f'artifacts/pools/{pool}/seats.parquet')
+ aa=pl.read_parquet(f'artifacts/pools/{pool}/actions.parquet').sort('hid','action_no')
+ bys=defaultdict(list);bya=defaultdict(list)
+ for r in ss.iter_rows(named=True):bys[r['hid']].append(r)
+ for r in aa.iter_rows(named=True):bya[r['hid']].append(r)
+ lookup={tuple(sorted((r['player_1'],r['player_2']))):r['pair_id'] for r in pairs.iter_rows(named=True)}
+ result=[]
+ for hh in hands.iter_rows(named=True):
+  hid=hh['hid'];seats=bys[hid];seat={r['player_id']:r for r in seats}
+  candidates=[(lookup[k],*k) for k in combinations(sorted(seat),2) if k in lookup]
+  if not candidates:continue
+  board=hh['board_cards'].split();bb=hh['big_blind'];acts=bya[hid]
+  cache={};live=set(seat);last={};prepared=[]
+  def get(p,st):
+   key=(p,st)
+   if key not in cache:
+    s=seat[p];cache[key]=strength([s['hole_card_1'],s['hole_card_2']],board[:(0,3,4,5)[st]])
+   return cache[key]
+  for a in acts:
+   st=ST[a['street']];p=a['player_id'];act=a['action'];v=get(p,st)
+   prepared.append((a,st,v,live.copy(),last.get(st)))
+   if act in AGG and (act!='all_in' or a['amount']>a['to_call']):last[st]=p
+   if act=='fold':live.discard(p)
+  for pid,p,q in candidates:
+   f=defaultdict(float); sp,sq=seat[p],seat[q]
+   f['pot_bb']=hh['final_pot']/bb;f['board_len']=len(board);f['showdown_n']=hh['players_at_showdown']
+   f['sum_net']=(sp['net_chips']+sq['net_chips'])/bb
+   f['abs_net_diff']=abs(sp['net_chips']-sq['net_chips'])/bb
+   f['min_contrib']=min(sp['total_contribution'],sq['total_contribution'])/bb
+   f['max_contrib']=max(sp['total_contribution'],sq['total_contribution'])/bb
+   f['contrib_share']=(sp['total_contribution']+sq['total_contribution'])/max(1,hh['final_pot'])
+   f['folded_n']=int(sp['folded'])+int(sq['folded']);f['showdown_pair']=int(sp['went_to_showdown'])+int(sq['went_to_showdown'])
+   f['won_n']=int(sp['won_share']>0)+int(sq['won_share']>0)
+   f['transfer_bb']=max(min(max(0,sp['net_chips']),max(0,-sq['net_chips'])),min(max(0,sq['net_chips']),max(0,-sp['net_chips'])))/bb
+   f['min_stack']=min(sp['starting_stack'],sq['starting_stack'])/bb;f['max_stack']=max(sp['starting_stack'],sq['starting_stack'])/bb
+   f['pre_min']=min(get(p,0)[0],get(q,0)[0]);f['pre_max']=max(get(p,0)[0],get(q,0)[0])
+   d=[defaultdict(float),defaultdict(float)]
+   for a,st,v,active,aggressor in prepared:
+    actor=a['player_id'];act=a['action'];isagg=act in AGG and (act!='all_in' or a['amount']>a['to_call'])
+    if actor not in (p,q):
+     if p in active and q in active:
+      f['third_actions']+=1;f['third_folds']+=act=='fold';f['third_raises']+=isagg
+     continue
+    ix=0 if actor==p else 1;partner=q if ix==0 else p;z=d[ix]
+    z['actions']+=1;z['post_actions']+=st>0;z[act]+=1;z['raise_n']+=isagg
+    if st==0:z['pre_aggression']+=isagg;z['pre_calls']+=act=='call'
+    if partner not in active:continue
+    z['together_actions']+=1;z['together_aggression']+=isagg
+    z['post_together_aggression']+=isagg and st>0
+    z['weak_aggression']+=isagg*(1-v[0]);z['strong_passive']+=(act in ('check','call'))*v[0]
+    z['made_passive']+=(act in ('check','call'))*(v[1]>=2 and st>0)
+    if a['players_active']==2:
+     z['hu_actions']+=1;z['hu_aggression']+=isagg;z['hu_check']+=act=='check'
+     z['hu_strong_check']+=(act=='check')*v[0];z['hu_call']+=act=='call'
+    if aggressor==partner:
+     z['facing_partner']+=1;z['partner_'+act]+=1
+     z['partner_'+act+'_strength']+=v[0]
+     z['partner_'+act+'_made']+=v[1]
+     z['partner_'+act+'_price']+=a['to_call']/max(1,a['pot_before'])
+     z['partner_'+act+'_bb']+=a['to_call']/bb
+     z['partner_'+act+'_post']+=st>0
+     if act=='fold':
+      z['fold_draw']+=v[2];z['fold_invested']+=seat[actor]['total_contribution']/bb
+      z['fold_better']+=max(0,v[0]-get(partner,st)[0]);z['fold_strong']+=v[0]>.5
+      z['fold_cheap_strong']+=v[0]*(1-a['to_call']/max(1,a['pot_before']))
+     if act=='call':
+      z['call_worse']+=max(0,get(partner,st)[0]-v[0])*a['amount']/max(1,a['pot_before'])
+    elif a['to_call']>0:
+     z['facing_other']+=1;z['other_'+act]+=1
+   # Explicit fixed schema, not data-dependent defaults.
+   base=['actions','post_actions','fold','check','call','bet','raise','all_in','raise_n','pre_aggression','pre_calls','together_actions','together_aggression','post_together_aggression','weak_aggression','strong_passive','made_passive','hu_actions','hu_aggression','hu_check','hu_strong_check','hu_call','facing_partner','fold_draw','fold_invested','fold_better','fold_strong','fold_cheap_strong','call_worse','facing_other']
+   for act in ['fold','call','raise','bet','check','all_in']:
+    base += ['partner_'+act+s for s in ['', '_strength','_made','_price','_bb','_post']]+['other_'+act]
+   for k in base:
+    f[k+'_sum']=d[0][k]+d[1][k];f[k+'_max']=max(d[0][k],d[1][k])
+   f['both_pre_raise']=min(d[0]['pre_aggression'],d[1]['pre_aggression'])
+   f['both_hu_check']=min(d[0]['hu_check'],d[1]['hu_check'])
+   f['both_active_post']=min(d[0]['post_actions'],d[1]['post_actions'])
+   f['isolation']=f['both_pre_raise']*f['third_folds']
+   for k in ['third_actions','third_folds','third_raises']:f[k]=f[k]
+   # Hand ranker and aggregates never see IDs/timestamps as predictors.
+   result.append({'pair_id':pid,'hand_id':hh['hand_id'],'hid':hid,'pool':pool,**f})
+ return pl.DataFrame(result,infer_schema_length=None).with_columns(pl.exclude('pair_id','hand_id','hid','pool').cast(pl.Float32))
+
+def aggregate(df):
+ keys=['pair_id','pool'];fs=[x for x in df.columns if x not in keys+['hand_id','hid']]
+ expr=[pl.len().alias('n_hands')]
+ for f in fs:
+  expr.extend([pl.col(f).mean().alias(f+'__mean'),pl.col(f).max().alias(f+'__max'),pl.col(f).top_k(5).mean().alias(f+'__top5'),pl.col(f).std().alias(f+'__std')])
+ return df.group_by(keys).agg(expr).fill_null(0)
+
+def broad_pairs(phase):
+ """Mirror the organisers' candidate rule: shared hands over the phase threshold.
+
+ Evaluation is exactly shared_hands>=38 minus pairs touching a publicly positive
+ player; development is the same rule scaled by the 60/40 hand split (>=57).
+ Labelled development pairs are always kept so training never loses a positive.
+ """
+ thr=57 if phase=='development' else 38
+ pop=pl.read_parquet(f'artifacts/population/{phase}_*.parquet').select('player_1','player_2','pool','n_hands')
+ pop=pop.filter(pl.col('n_hands')>=thr)
+ if phase=='development':
+  lab=pl.read_parquet('artifacts/labels.parquet').select('player_1','player_2','pool')
+  pop=pl.concat([pop.drop('n_hands').with_columns(pl.col('pool').cast(pl.Int32)),lab.with_columns(pl.col('pool').cast(pl.Int32))]).unique(subset=['player_1','player_2'])
+ else:
+  pop=pop.drop('n_hands')
+ return pop.with_columns((pl.col('player_1')+'|'+pl.col('player_2')).alias('pair_id'))
+
+if __name__=='__main__':
+ ap=argparse.ArgumentParser();ap.add_argument('--phase',default='development');ap.add_argument('--limit',type=int,default=400)
+ ap.add_argument('--broad',action='store_true',help='all candidate pairs, aggregates only')
+ ap.add_argument('--start',type=int,default=0);args=ap.parse_args()
+ h=pl.read_parquet('artifacts/hands.parquet').filter(pl.col('phase')==args.phase)
+ if args.broad:pairs=broad_pairs(args.phase)
+ elif args.phase=='development':pairs=pl.read_parquet('artifacts/labels.parquet')
+ else:pairs=pl.read_csv('data/evaluation_pairs.csv').join(pl.read_parquet('artifacts/player_pools.parquet'),left_on='player_1',right_on='player_id')
+ out=Path('artifacts')/(args.phase+('_broad' if args.broad else ''))
+ out.mkdir(exist_ok=True)
+ t=time.time()
+ for i,pool in enumerate(sorted(pairs['pool'].unique())):
+  if i<args.start or i>=args.limit:continue
+  path=out/f'{pool}.agg.parquet' if args.broad else out/f'{pool}.parquet'
+  if path.exists():continue
+  df=pool_features(pool,pairs.filter(pl.col('pool')==pool),h.filter(pl.col('pool')==pool))
+  if args.broad:
+   aggregate(df).write_parquet(path)
+  else:
+   df.write_parquet(path);aggregate(df).write_parquet(out/f'{pool}.agg.parquet')
+  if i%10==0:print(args.phase,i,'pool',pool,'rows',df.height,'elapsed',round(time.time()-t,1),flush=True)
+ print('DONE',args.phase,round(time.time()-t,1),flush=True)

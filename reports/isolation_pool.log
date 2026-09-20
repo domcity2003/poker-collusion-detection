@@ -1,0 +1,7 @@
+fitted iso_specialist
+fitted all_families
+  v4 blend (base+context)          isolation MAP@5 0.2834  (n=79)
+  isolation specialist refit       isolation MAP@5 0.2715  (n=79)
+  all-family ranker                isolation MAP@5 0.2200  (n=79)
+  base+allfamily                   isolation MAP@5 0.2845  (n=79)
+  base+context+allfamily           isolation MAP@5 0.2870  (n=79)

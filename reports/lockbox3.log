@@ -1,0 +1,19 @@
+development table (137739, 258) features 250
+  fitted specialist directed_transfer
+  fitted specialist soft_play
+  fitted specialist coordinated_isolation
+{
+  "official_labeled_only": 0.9027585604329985,
+  "official_without_novelty_rule": 0.9037510475820693,
+  "pairs_with_full_evidence": 1.0,
+  "censor_0": 0.6595060872471461,
+  "censor_50": 0.9984938101889682,
+  "censor_100": 0.998902056769903,
+  "censor_200": 0.998902056769903,
+  "censor_400": 0.998902056769903,
+  "n_candidates": 28000,
+  "n_positives": 68,
+  "flagged_other_coordination_all": 0.9958214285714285,
+  "flagged_other_coordination_positives": 0.014705882352941176,
+  "seconds": 128
+}

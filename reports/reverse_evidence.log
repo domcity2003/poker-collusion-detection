@@ -1,0 +1,26 @@
+candidate features: 225
+pairs listing <5 evidence hands: 32
+
+=== directed_transfer (pairs=148)
+  jac=0.384 recall=0.610 exact=1/145 med|S|=5  fold_better_sum > 0.02167
+  jac=0.384 recall=0.610 exact=1/145 med|S|=5  fold_better_max > 0.02167
+  jac=0.365 recall=0.538 exact=0/143 med|S|=5  fold_with_best > 0
+  jac=0.365 recall=0.538 exact=0/143 med|S|=5  fold_with_best_pot_bb > 0
+  jac=0.365 recall=0.538 exact=0/143 med|S|=5  fold_with_best_cheap > 0
+  jac=0.365 recall=0.538 exact=0/143 med|S|=5  fold_with_best_any > 0
+
+=== soft_play (pairs=132)
+  jac=0.423 recall=0.723 exact=5/132 med|S|=8  partner_call_sum > 0
+  jac=0.423 recall=0.723 exact=5/132 med|S|=8  partner_call_max > 0
+  jac=0.423 recall=0.723 exact=5/132 med|S|=8  partner_call_strength_sum > 0
+  jac=0.423 recall=0.723 exact=5/132 med|S|=8  partner_call_strength_max > 0
+  jac=0.423 recall=0.723 exact=5/132 med|S|=8  partner_call_price_sum > 0
+  jac=0.423 recall=0.723 exact=5/132 med|S|=8  partner_call_price_max > 0
+
+=== coordinated_isolation (pairs=92)
+  jac=0.185 recall=0.498 exact=0/92 med|S|=11  policy_loose_max > 2.203
+  jac=0.185 recall=0.498 exact=0/92 med|S|=11  policy_resid_max > 0.8895
+  jac=0.162 recall=0.290 exact=0/91 med|S|=6  policy_loose_max > 2.923
+  jac=0.162 recall=0.290 exact=0/91 med|S|=6  policy_resid_max > 0.9462
+  jac=0.154 recall=0.385 exact=0/92 med|S|=10  policy_junk_max > 0.3983
+  jac=0.149 recall=0.343 exact=0/92 med|S|=9  fold_better_sum > 0
