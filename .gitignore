@@ -13,3 +13,6 @@ __pycache__/
 # table ids from the competition dataset. Redistribution is not permitted.
 reports/discovery_cases.csv
 reports/discovery_replays.txt
+
+# editor backups
+*.bak
