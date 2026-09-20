@@ -7,9 +7,10 @@ prove it.
 
 Built for the Kaggle competition
 [Detect Suspicious Value Transfers in Poker](https://www.kaggle.com/competitions/detect-suspicious-value-transfers-in-poker)
-($5,000 prize pool, 366 teams).
+($5,000 prize pool).
 
-**Final score 0.84537, ranked 109 of 366.** The median entry scored 0.8034.
+**Placed 109th with a score of 0.84537**, in a competition that drew 4,775
+submissions. The median entry scored 0.8034.
 
 `Python` · `CatBoost` · `Polars` · `scikit-learn` · `NumPy` / `pandas` ·
 positive-unlabelled learning · learning-to-rank (YetiRank) · grouped
