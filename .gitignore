@@ -1,0 +1,8 @@
+data/
+artifacts/
+.venv/
+__pycache__/
+*.pyc
+*.cbm
+*.npy
+*.bak
