@@ -33,7 +33,7 @@ raw hands ─▶ pair-hand features ─▶ pair aggregates ─┬─▶ risk mod
 - **Hindsight** (training only): folded players' hole cards show whether a fold surrendered a winning hand, and who was the victim of an isolation squeeze.
 - **Action-local context:** whether the yield came immediately after the partner acted, and whether roles stay fixed across hands or alternate.
 
-**Models.** Gradient-boosted trees throughout. Risk is a classifier trained with positive-unlabelled weights (8 for confirmed positives, 1 for confirmed negatives, 0.15 for unlabelled). Evidence is a `CatBoostRanker` with YetiRank loss, grouped by pair, blended per behaviour family in rank space. A generic risk model is blended with three per-family specialists.
+**Models.** Gradient-boosted trees throughout. Risk is a classifier trained with positive-unlabelled weights (8 for confirmed positives, 1 for confirmed negatives, and a small weight for unlabelled pairs: 0.04 in `src/model.py`, 0.15 in my later final configuration, which is not in this repo). Evidence is a `CatBoostRanker` with YetiRank loss, grouped by pair, blended per behaviour family in rank space. A generic risk model is blended with three per-family specialists.
 
 **Leakage control.** Folds are `SHA256(table_id) % 5`, so players who share a table never straddle a fold boundary. Fold 0 is a lockbox, untouched until the configuration was frozen. One assembly path (`src/pipeline.py`) serves training and inference, so the two cannot drift apart.
 
